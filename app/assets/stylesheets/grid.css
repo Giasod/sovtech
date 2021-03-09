@@ -1,0 +1,33 @@
+body {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.row {
+  margin: 0 ;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid grey;
+}
+
+.row:after {
+  clear: both;
+  content: " ";
+  display: block;
+}
+
+.col {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.col-33 {
+  width: 33.33%;
+}

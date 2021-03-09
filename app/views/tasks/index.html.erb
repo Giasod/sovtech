@@ -1,0 +1,30 @@
+<h1><%= 'Tasks' %></h1>
+
+<div class="container">
+  <div class="row"> 
+    <div class="col col-33">
+      <h3><%= 'New tasks' %></h3>
+      <% @tasks.where(task_status: 0).each do |t| %>
+        <ul>
+          <li><%= t.title %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div class="col col-33">
+      <h3><%= 'In progress' %></h3>
+      <% @tasks.where(task_status: 1).each do |t| %>
+        <ul>
+          <li><%= t.title %></li>
+        </ul>
+      <% end %>  
+    </div>
+    <div class="col col-33">
+      <h3><%= 'Complete' %></h3>
+      <% @tasks.where(task_status: 2).each do |t| %>
+        <ul>
+          <li><%= t.title %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
