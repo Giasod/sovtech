@@ -7,6 +7,7 @@
       <% @tasks.where(task_status: 0).each do |t| %>
         <ul>
           <li><%= t.title %></li>
+          <%= link_to 'Start', start_task_path(t) %> 
         </ul>
       <% end %>
     </div>
