@@ -5,8 +5,31 @@ h1 {
 
 h3 {
   text-align: center;
+  border-radius: 5px;
 }
 
-li {
-  list-style: none;
+.new {
+  background-color:plum;
+}
+
+.in-progress {
+  background-color: deepskyblue;
+}
+
+.completed {
+  background-color: greenyellow;
+}
+
+
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.wrapper {
+  background-color: slategrey;
 }

@@ -8,11 +8,14 @@ body {
   max-width: 960px;
 }
 
+.container-top {
+  margin: 0 auto;
+}
+
 .row {
   margin: 0 ;
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 1px solid grey;
 }
 
 .row:after {
@@ -25,9 +28,29 @@ body {
   box-sizing: border-box;
   float: left;
   padding: 0 10px;
-  text-align: center;
+  text-align: left;
+}
+
+.col-100 {
+  width: 100%;
+}
+
+.col-75 {
+  width: 75%;
 }
 
 .col-33 {
   width: 33.33%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 10px;
 }
