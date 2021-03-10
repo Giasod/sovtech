@@ -1,24 +1,16 @@
-# README
+# Тестовое задания для компании совтех.рф
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Задание:
+Создать простое Rails-приложение, для управления задачами (`Tasks`).
+Для пользователей (`signin/signup`) можно использовать `Devise`.
+Сущность `Task` должна иметь следующие поля: название задачи, статус (`new/in_progress/complete`)
+На странице `/tasks` должны выводиться три блока (с заголовками статусов), в каждом из которых должны выводиться задачи с соответствующим статусом.
 
-Things you may want to cover:
+В блоке `New` у каждой из задач должна быть кнопка `Start` (переводится в статус `in_progress`)
+В блоке `In progress` у каждой из задач должна быть кнопка `Complete` (переводит задачу в статус `complete`).
+Задача со статуса `in_progress` в статус `complete` может быть переведена только при условии, если у этой задачи есть минимум два `approve` от двух других пользователей. эта логика, желательно, должна быть реализована в сервисе (`service objects`).
+механизм аппрува можно не добавлять в интерфейс, достаточно будет в консоли добавить эти аппрувы.
 
-* Ruby version
+И по желанию на плюс можно реализовать action-ы перевода статусов задач без перезагрузки страниц (если будет желание и понимание деталей реализации. PS. по сути, там не надо городить фреймворками, просто `remote: true` и JS респонс action-а).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Использовать `rails`, `postgresql`, `slim`
