@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!, except: :index 
   before_action :set_task, except: %i[index new create]
+  before_action :set_user, only: %i[edit update destroy start complete]
 
   def index
     @tasks = Task.all
@@ -57,6 +58,13 @@ class TasksController < ApplicationController
   def set_task
     @task = Task.find(params[:id])
   end
+
+  def set_user
+    unless @task.user_id == current_user.id
+     flash[:notice] = 'Access denied as you are not owner of this Job'
+     redirect_to tasks_path
+    end
+   end
 
   def task_params
     params.require(:task).permit(:title, :task_status)
