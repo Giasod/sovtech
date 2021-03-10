@@ -8,4 +8,10 @@ Rails.application.routes.draw do
       get :complete
     end
   end
+
+  resources :users do
+    member do
+      get :approve_task
+    end
+  end
 end

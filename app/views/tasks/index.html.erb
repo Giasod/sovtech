@@ -16,7 +16,9 @@
       <% @tasks.where(task_status: 1).each do |t| %>
         <ul>
           <li><%= link_to "#{t.title}", t %></li>
-          <%= link_to 'Completed', complete_task_path(t) %> 
+          <% if t.approved_counter >= 2 %>
+            <%= link_to 'Completed', complete_task_path(t) %> 
+          <% end %>
         </ul>
       <% end %>  
     </div>
