@@ -1,0 +1,21 @@
+h1= 'Tasks'
+.container
+  .row
+    .col.col-33
+      h3.new= 'New tasks'
+      - @tasks.where(task_status: 0).each do |t|
+        ul
+          = render 'tasks/task', t: t
+          .button.button-next= link_to 'Start task', start_task_path(t)
+    .col.col-33
+      h3.in-progress= 'In progress'
+      - @tasks.where(task_status: 1).each do |t|
+        ul
+          = render 'tasks/task', t: t
+          - if t.approved_counter >= 2
+            .button.button-next= link_to 'Task completed', complete_task_path(t)
+    .col.col-33
+      h3.completed= 'Complete'
+      - @tasks.where(task_status: 2).each do |t|
+        ul
+          = render 'tasks/task', t: t

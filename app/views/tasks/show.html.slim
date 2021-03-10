@@ -1,0 +1,9 @@
+p
+  strong Title:
+  = @task.title
+p
+  strong Responsible:
+  = @task.user.email
+.button.button-navbar= link_to 'Edit', edit_task_path(@task)
+.button.button-navbar= link_to 'Back', tasks_path
+.button.button-navbar= link_to "Delete", task_path, method: :delete, data: { confirm: 'Are you sure?' }

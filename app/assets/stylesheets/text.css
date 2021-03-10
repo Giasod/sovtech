@@ -21,7 +21,6 @@ h3 {
 }
 
 
-
 .text-right {
   text-align: right;
 }
@@ -32,4 +31,9 @@ h3 {
 
 .wrapper {
   background-color: slategrey;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
