@@ -61,7 +61,7 @@ class TasksController < ApplicationController
 
   def set_user
     unless @task.user_id == current_user.id
-     flash[:notice] = 'Access denied as you are not owner of this Job'
+     flash[:notice] = 'Access denied as you are not owner of this Task'
      redirect_to tasks_path
     end
    end
